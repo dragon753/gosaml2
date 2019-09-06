@@ -215,7 +215,7 @@ func (sp *SAMLServiceProvider) Validate(response *types.Response) error {
 			return ErrParsing{Tag: NotOnOrAfterAttr, Value: subjectConfirmationData.NotOnOrAfter, Type: "time.RFC3339"}
 		}
 
-		now := sp.Clock.Now()
+		now := sp.Clock.Now().UTC()
 		if now.After(notOnOrAfter) {
 			return ErrInvalidValue{
 				Reason:   ReasonExpired,
