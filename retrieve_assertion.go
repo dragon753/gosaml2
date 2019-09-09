@@ -62,10 +62,10 @@ func (sp *SAMLServiceProvider) RetrieveAssertionInfo(encodedResponse string) (*A
 		return nil, ErrMissingElement{Tag: SubjectTag}
 	}
 
-	nameID := subject.NameID
-	if nameID == nil {
-		return nil, ErrMissingElement{Tag: NameIdTag}
-	}
+	//nameID := subject.NameID
+	//if nameID == nil {
+	//	return nil, ErrMissingElement{Tag: NameIdTag}
+	//}
 
 	assertionInfo.NameID = nameID.Value
 
