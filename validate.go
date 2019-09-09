@@ -47,7 +47,7 @@ const (
 //all SAML2 contracts are upheld.
 func (sp *SAMLServiceProvider) VerifyAssertionConditions(assertion *types.Assertion) (*WarningInfo, error) {
 	warningInfo := &WarningInfo{}
-	now := sp.Clock.Now()
+	now := sp.Clock.Now().UTC()
 
 	conditions := assertion.Conditions
 	if conditions == nil {
