@@ -67,7 +67,7 @@ func (sp *SAMLServiceProvider) RetrieveAssertionInfo(encodedResponse string) (*A
 	//	return nil, ErrMissingElement{Tag: NameIdTag}
 	//}
 
-	assertionInfo.NameID = nameID.Value
+	//assertionInfo.NameID = nameID.Value
 
 	//Get the actual assertion attributes
 	attributeStatement := assertion.AttributeStatement
